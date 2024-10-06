@@ -1,0 +1,6 @@
+#!/bin/sh
+name="alist"
+home="/work/alist"
+mkdir -p $home
+
+exec /build/bin/alist server --data $home
