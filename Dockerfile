@@ -11,7 +11,7 @@ RUN apk add --no-cache \
 
 WORKDIR /work
 
-RUN ALIST_URL=$(curl -L -s https://api.github.com/repos/alist-org/alist/releases/latest | jq -r '.assets[] | select(.name | endswith("alist-linux-musl-amd64.tar.gz")) | .browser_download_url') && \
+RUN ALIST_URL=$(curl -L -s https://api.github.com/repos/AlistGo/alist/releases/latest | jq -r '.assets[] | select(.name | endswith("alist-linux-musl-amd64.tar.gz")) | .browser_download_url') && \
   curl -L $ALIST_URL -o /tmp/alist.tar.gz && \
   mkdir -p /build/bin/ &&  \
   tar -zxvf /tmp/alist.tar.gz -C /build/bin/; \
